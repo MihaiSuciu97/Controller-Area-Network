@@ -1,3 +1,5 @@
+package entities;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -26,7 +28,7 @@ public class ABS {
 
     void execute() {
         Date date1 = new Date();
-        System.out.println("You need to use ABS NOW " + dateFormat.format(date1));
+        System.out.println("You need to use entities.ABS NOW " + dateFormat.format(date1));
     }
 
     void repair() {
@@ -36,7 +38,7 @@ public class ABS {
             e.printStackTrace();
         }
         Date date2 = new Date();
-        System.out.println("ABS used " + dateFormat.format(date2));
+        System.out.println("entities.ABS used " + dateFormat.format(date2));
     }
 
 

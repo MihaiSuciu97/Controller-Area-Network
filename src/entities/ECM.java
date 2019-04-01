@@ -1,21 +1,23 @@
+package entities;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 //Engine Control Module
-class ECM {
+public class ECM {
     private int ECM_id;
     private boolean isImportant = true;
     private DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
 
-    void execute() {
+    public void execute() {
         Date date1 = new Date();
-        System.out.println("A problem with ECM at " + dateFormat.format(date1));
+        System.out.println("A problem with entities.ECM at " + dateFormat.format(date1));
     }
 
-    void repair() {
+    public void repair() {
         try {
             TimeUnit.SECONDS.sleep(10);
         } catch (InterruptedException e) {
