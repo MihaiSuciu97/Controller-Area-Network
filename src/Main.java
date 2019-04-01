@@ -1,7 +1,4 @@
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.concurrent.TimeUnit;
+
 
 public class Main {
 
@@ -10,7 +7,13 @@ public class Main {
 
         ECM ecm = new ECM();
         ecm.execute();
-        ecm.repair();
+        if(ecm.isImportant()==true){
+            ecm.repair();
+        }
+        else{
+            System.out.println("Is not important");
+        }
+
 
 
         }
