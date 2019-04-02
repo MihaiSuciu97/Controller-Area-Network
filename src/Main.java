@@ -1,21 +1,24 @@
 import entities.ECM;
+import entities.Roof;
 
 public class Main {
 
     public static void main(String[] args) {
 
+        Roof roof = new Roof();
+        roof.execute();
 
         ECM ecm = new ECM();
         ecm.execute();
-        if(ecm.isImportant()==true){
-            ecm.repair();
+        if(roof.isImportant()==true){
+            roof.open();
         }
         else{
-            System.out.println("Is not important");
+            if(ecm.isImportant()==true){
+                ecm.repair();
+                roof.open();
+            }
         }
-
-
-
-        }
+    }
 
 }

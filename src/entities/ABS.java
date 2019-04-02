@@ -10,6 +10,21 @@ public class ABS {
     private boolean isImportant = true;
     private DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
+    void execute() {
+        Date date1 = new Date();
+        System.out.println("You need to use ABS NOW " + dateFormat.format(date1));
+    }
+
+    void repair() {
+        try {
+            TimeUnit.SECONDS.sleep(10);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        Date date2 = new Date();
+        System.out.println("ABS used " + dateFormat.format(date2));
+    }
+
     public int getABS_id() {
         return ABS_id;
     }
@@ -24,21 +39,6 @@ public class ABS {
 
     public void setImportant(boolean important) {
         isImportant = important;
-    }
-
-    void execute() {
-        Date date1 = new Date();
-        System.out.println("You need to use entities.ABS NOW " + dateFormat.format(date1));
-    }
-
-    void repair() {
-        try {
-            TimeUnit.SECONDS.sleep(10);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        Date date2 = new Date();
-        System.out.println("entities.ABS used " + dateFormat.format(date2));
     }
 
 

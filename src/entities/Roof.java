@@ -5,34 +5,32 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
-//Engine Control Module
-public class ECM {
-    private int ECM_id;
-    private boolean isImportant = true;
+public class Roof {
+    private int Roof_id;
+    private boolean isImportant = false;
     private DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-
 
     public void execute() {
         Date date1 = new Date();
-        System.out.println("A problem with ECM at " + dateFormat.format(date1));
+        System.out.println("Roof open required " + dateFormat.format(date1));
     }
 
-    public void repair() {
+    public void open() {
         try {
             TimeUnit.SECONDS.sleep(10);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         Date date2 = new Date();
-        System.out.println("ECM used " + dateFormat.format(date2));
+        System.out.println("Roof opened at " + dateFormat.format(date2));
     }
 
-    public int getECM_id() {
-        return ECM_id;
+    public int getRoof_id() {
+        return Roof_id;
     }
 
-    public void setECM_id(int ECM_id) {
-        this.ECM_id = ECM_id;
+    public void setRoof_id(int roof_id) {
+        Roof_id = roof_id;
     }
 
     public boolean isImportant() {
