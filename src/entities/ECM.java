@@ -12,19 +12,20 @@ public class ECM {
     private DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
 
-    public void execute() {
+    public Date execute() {
         Date date1 = new Date();
-        System.out.println("A problem with ECM at " + dateFormat.format(date1));
+        return date1;
+
     }
 
-    public void repair() {
-        try {
+    public Date repair() {
+       /* try {
             TimeUnit.SECONDS.sleep(10);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
         Date date2 = new Date();
-        System.out.println("ECM used " + dateFormat.format(date2));
+        return date2;
     }
 
     public int getECM_id() {

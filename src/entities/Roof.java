@@ -10,19 +10,18 @@ public class Roof {
     private boolean isImportant = false;
     private DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
-    public void execute() {
+    public Date execute() {
         Date date1 = new Date();
-        System.out.println("Roof open required " + dateFormat.format(date1));
+
+        //System.out.println("Roof open required " + dateFormat.format(date1));
+        return date1;
     }
 
-    public void open() {
-        try {
-            TimeUnit.SECONDS.sleep(10);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    public Date open() {
+
         Date date2 = new Date();
         System.out.println("Roof opened at " + dateFormat.format(date2));
+        return date2;
     }
 
     public int getRoof_id() {
