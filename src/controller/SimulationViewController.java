@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.util.Duration;
 
+import javax.swing.text.html.ImageView;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Date;
@@ -23,7 +24,10 @@ public class SimulationViewController implements Initializable {
     private ListView<String> list = new ListView<>();
 
     @FXML
-    Button startButton;
+    private Button startButton;
+
+    @FXML
+    private ImageView roofImage;
 
 
     ObservableList<String> items = FXCollections.observableArrayList();
