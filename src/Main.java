@@ -1,9 +1,14 @@
 import entities.ECM;
 import entities.Roof;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-public class Main {
+public class Main extends Application {
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
 
         Roof roof = new Roof();
         roof.execute();
@@ -20,5 +25,14 @@ public class Main {
             }
         }
     }
-
+*/
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        Parent fxml = FXMLLoader.load(getClass().getResource("/resources/FirstView.fxml "));
+        Scene scene = new Scene(fxml);
+        primaryStage.setWidth(600);
+        primaryStage.setHeight(350);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
 }
