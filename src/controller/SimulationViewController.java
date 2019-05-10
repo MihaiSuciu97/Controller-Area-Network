@@ -9,16 +9,20 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
-import javax.swing.text.html.ImageView;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.concurrent.TimeUnit;
 
 public class SimulationViewController implements Initializable {
+
+    @FXML
+    public ImageView roofImage;
 
     @FXML
     private ListView<String> list = new ListView<>();
@@ -26,59 +30,41 @@ public class SimulationViewController implements Initializable {
     @FXML
     private Button startButton;
 
-    @FXML
-    private ImageView roofImage;
-
 
     ObservableList<String> items = FXCollections.observableArrayList();
 
     Date date;
 
-    private ObservableList<Date> dates = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        list.setItems(null);
-        /*Roof roof = new Roof();
-        roof.execute();
+        list.setItems(items);
+        roofImage.setVisible(false);
 
-        ECM ecm = new ECM();
-        ecm.execute();
-        if(roof.isImportant()==true){
-            roof.open();
-        }
-        else{
-            if(ecm.isImportant()==true){
-                ecm.repair();
-                roof.open();
-            }
-        }*/
-       /* Roof roof = new Roof();
-        Date date = new Date();
-        date = roof.execute();
-        listView.getItems().add(date.toString());*/
     }
 
     public void startSimulationList() throws InterruptedException {
+
         Roof roof = new Roof();
-        Date date1 = roof.execute();
-        ECM ecm = new ECM();
-        Date date2 = ecm.execute();
-        items.add(date1.toString() + "- roof problem");
-        items.add(date2.toString() + " - ECM problem");
-        list.setItems(items);
-        startButton.setVisible(false);
-        if (ecm.isImportant()) {
-            Thread.sleep(10000);
-            System.out.println("ba aici");
-            date = ecm.repair();
-            items.add(date.toString() + " - ECM solved");
+        date = roof.execute();
+        items.add(date.toString() + "- roof problem");
+
+        roofImage.setVisible(true);
+        System.out.println("sunt aici");
+        PauseTransition visiblePause = new PauseTransition(
+                Duration.seconds(3)
+        );
+        visiblePause.setOnFinished(
+                event -> roofImage.setVisible(false)
+        );
+
+        visiblePause.play();
+        Date date1 = roof.open();
+        items.add(date1.toString() + "- roof opened");
 
 
-            date = roof.open();
-            items.add(date.toString() + " - Roof opened");
-        }
-        startButton.setVisible(true);
+
+
     }
 }
 

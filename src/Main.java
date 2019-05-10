@@ -28,11 +28,12 @@ public class Main extends Application {
 */
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent fxml = FXMLLoader.load(getClass().getResource("/resources/FirstView.fxml "));
+       /* Parent fxml = FXMLLoader.load(getClass().getResource("/resources/FirstView.fxml "));
         Scene scene = new Scene(fxml);
         primaryStage.setWidth(600);
         primaryStage.setHeight(350);
         primaryStage.setScene(scene);
-        primaryStage.show();
+        primaryStage.show();*/
+       System.out.println(2+3+"2"+9+1);
     }
 }
