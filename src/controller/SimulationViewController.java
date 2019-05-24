@@ -1,56 +1,61 @@
 package controller;
 
-import entities.ECM;
+import entities.ABS;
 import entities.Roof;
 import javafx.animation.PauseTransition;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import java.util.ResourceBundle;
-import java.util.concurrent.TimeUnit;
 
 public class SimulationViewController implements Initializable {
+
+    @FXML
+    public ImageView absImage;
+
+    @FXML
+    public ImageView espImage;
+
+    @FXML
+    public ImageView oilImage;
 
     @FXML
     public ImageView roofImage;
 
     @FXML
-    private ListView<String> list = new ListView<>();
+    public ImageView seatImage;
 
-    @FXML
-    private Button startButton;
+    @FXML ImageView tcuImage;
 
-
-    ObservableList<String> items = FXCollections.observableArrayList();
-
-    Date date;
-
+    public Date date;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        list.setItems(items);
+        absImage.setVisible(false);
+        espImage.setVisible(false);
+        oilImage.setVisible(false);
         roofImage.setVisible(false);
+        seatImage.setVisible(false);
+        tcuImage.setVisible(false);
+
+
+
 
     }
 
     public void startSimulationList() throws InterruptedException {
 
+        ABS abs = new ABS();
         Roof roof = new Roof();
+
         date = roof.execute();
-        items.add(date.toString() + "- roof problem");
 
         roofImage.setVisible(true);
-        System.out.println("sunt aici");
+
         PauseTransition visiblePause = new PauseTransition(
                 Duration.seconds(3)
         );
@@ -59,8 +64,8 @@ public class SimulationViewController implements Initializable {
         );
 
         visiblePause.play();
-        Date date1 = roof.open();
-        items.add(date1.toString() + "- roof opened");
+        Date date1 = roof.repair();
+
 
 
 

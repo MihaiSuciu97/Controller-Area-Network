@@ -6,23 +6,19 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class Seat{
-    private int Seat_id;
+    private int seatId;
     private boolean isImportant = false;
     private DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
-    public void execute() {
+    public Date execute() {
         Date date1 = new Date();
-        System.out.println("Change seat position " + dateFormat.format(date1));
+        return date1;
     }
 
-    public void open() {
-        try {
-            TimeUnit.SECONDS.sleep(10);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    public Date repair() {
+
         Date date2 = new Date();
-        System.out.println("Seat position changed" + dateFormat.format(date2));
+        return date2;
     }
 
     public boolean isImportant() {
@@ -33,11 +29,13 @@ public class Seat{
         isImportant = important;
     }
 
-    public int getSeat_id() {
-        return Seat_id;
+
+
+    public int getSeatId() {
+        return seatId;
     }
 
-    public void setSeat_id(int seat_id) {
-        Seat_id = seat_id;
+    public void setSeatId(int seatId) {
+        this.seatId = seatId;
     }
 }

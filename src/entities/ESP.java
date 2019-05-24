@@ -5,10 +5,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
-public class Roof {
-    private int roofId;
-    private boolean isImportant = false;
+//Engine Control Module
+public class ESP {
+    private int ESPId;
+    private boolean isImportant = true;
     private DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+
 
     public Date execute() {
         Date date1 = new Date();
@@ -22,6 +24,7 @@ public class Roof {
     }
 
 
+
     public boolean isImportant() {
         return isImportant;
     }
@@ -30,11 +33,11 @@ public class Roof {
         isImportant = important;
     }
 
-    public int getRoofId() {
-        return roofId;
+    public int getESPId() {
+        return ESPId;
     }
 
-    public void setRoofId(int roofId) {
-        this.roofId = roofId;
+    public void setESPId(int ESPId) {
+        this.ESPId = ESPId;
     }
 }

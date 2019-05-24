@@ -1,5 +1,4 @@
-import entities.ECM;
-import entities.Roof;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -28,12 +27,11 @@ public class Main extends Application {
 */
     @Override
     public void start(Stage primaryStage) throws Exception {
-       /* Parent fxml = FXMLLoader.load(getClass().getResource("/resources/FirstView.fxml "));
+        Parent fxml = FXMLLoader.load(getClass().getResource("/resources/FirstView.fxml "));
         Scene scene = new Scene(fxml);
         primaryStage.setWidth(600);
         primaryStage.setHeight(350);
         primaryStage.setScene(scene);
-        primaryStage.show();*/
-       System.out.println(2+3+"2"+9+1);
+        primaryStage.show();
     }
 }
