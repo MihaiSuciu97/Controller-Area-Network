@@ -57,23 +57,23 @@ public class SimulationViewController implements Initializable {
         roofImage.setVisible(true);
         absImage.setVisible(true);
 
-        PauseTransition visiblePause = new PauseTransition(Duration.seconds(3));
-        visiblePause.setCycleCount(1);
-        visiblePause.setOnFinished(event -> {
+        PauseTransition absPause = new PauseTransition(Duration.seconds(3));
+        absPause.setCycleCount(1);
+        absPause.setOnFinished(event -> {
             absImage.setVisible(false);
             date = abs.repair();
             System.out.println("Abs repaired - " + date);
         });
-        visiblePause.play();
+        absPause.play();
 
-        PauseTransition visiblePause1 = new PauseTransition(Duration.seconds(6));
-        visiblePause1.setCycleCount(1);
-        visiblePause1.setOnFinished(event -> {
+        PauseTransition roofPause = new PauseTransition(Duration.seconds(6));
+        roofPause.setCycleCount(1);
+        roofPause.setOnFinished(event -> {
             roofImage.setVisible(false);
             date = roof.repair();
             System.out.println("Roof repaired - " + date);
         });
-        visiblePause1.play();
+        roofPause.play();
 
     }
 
@@ -100,14 +100,24 @@ public class SimulationViewController implements Initializable {
         espImage.setVisible(true);
 
 
-        /*PauseTransition visiblePause = new PauseTransition(Duration.seconds(3));
-        visiblePause.setCycleCount(1);
-        visiblePause.setOnFinished(event -> {
+        PauseTransition espPause = new PauseTransition(Duration.seconds(3));
+        espPause.setCycleCount(1);
+        espPause.setOnFinished(event -> {
+            espImage.setVisible(false);
+            date = abs.repair();
+            System.out.println("Esp repaired - " + date);
+        });
+        espPause.play();
+
+
+        PauseTransition absPause = new PauseTransition(Duration.seconds(6));
+        absPause.setCycleCount(1);
+        absPause.setOnFinished(event -> {
             absImage.setVisible(false);
             date = abs.repair();
             System.out.println("Abs repaired - " + date);
         });
-        visiblePause.play();*/
+        absPause.play();
     }
 
 }
