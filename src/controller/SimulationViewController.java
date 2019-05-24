@@ -29,7 +29,7 @@ public class SimulationViewController implements Initializable {
     public ImageView seatImage;
 
     @FXML
-    public ImageView tcuImage;
+    public ImageView airbagImage;
 
     private Date date;
 
@@ -40,7 +40,7 @@ public class SimulationViewController implements Initializable {
         oilImage.setVisible(false);
         roofImage.setVisible(false);
         seatImage.setVisible(false);
-        tcuImage.setVisible(false);
+        airbagImage.setVisible(false);
 
     }
 
@@ -50,9 +50,9 @@ public class SimulationViewController implements Initializable {
         Roof roof = new Roof();
 
         date = abs.execute();
-        System.out.println("Abs problem at " + date);
+        System.out.println("Abs problem - " + date);
         date = roof.execute();
-        System.out.println("Roof problem at " + date);
+        System.out.println("Roof small problem - " + date);
 
         roofImage.setVisible(true);
         absImage.setVisible(true);
@@ -62,7 +62,7 @@ public class SimulationViewController implements Initializable {
         visiblePause.setOnFinished(event -> {
             absImage.setVisible(false);
             date = abs.repair();
-            System.out.println("Abs repaired at " + date);
+            System.out.println("Abs repaired - " + date);
         });
         visiblePause.play();
 
@@ -71,20 +71,44 @@ public class SimulationViewController implements Initializable {
         visiblePause1.setOnFinished(event -> {
             roofImage.setVisible(false);
             date = roof.repair();
-            System.out.println("Roof repaired at " + date);
+            System.out.println("Roof repaired - " + date);
         });
         visiblePause1.play();
 
     }
 
-  /*  public void simulation2() {
+    public void simulation2() {
+
+        System.out.println("SPORT");
+
         ABS abs = new ABS();
+        Airbag airbag = new Airbag();
         ESP esp = new ESP();
         Oil oil = new Oil();
         Roof roof = new Roof();
         Seat seat = new Seat();
-        TCU tcu = new TCU();
-    }*/
+
+
+        date = abs.execute();
+        System.out.println("Abs problem - " + date);
+        absImage.setVisible(true);
+        date = airbag.execute();
+        System.out.println("Airbag problem - " + date);
+        airbagImage.setVisible(true);
+        date = esp.execute();
+        System.out.println("Esp problem - " + date);
+        espImage.setVisible(true);
+
+
+        /*PauseTransition visiblePause = new PauseTransition(Duration.seconds(3));
+        visiblePause.setCycleCount(1);
+        visiblePause.setOnFinished(event -> {
+            absImage.setVisible(false);
+            date = abs.repair();
+            System.out.println("Abs repaired - " + date);
+        });
+        visiblePause.play();*/
+    }
 
 }
 

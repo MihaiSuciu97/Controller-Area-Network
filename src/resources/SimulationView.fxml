@@ -5,38 +5,35 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="334.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SimulationViewController">
-   <Button layoutX="504.0" layoutY="48.0" mnemonicParsing="false" onAction="#simulation1" text="Slow simulation"/>
+<AnchorPane prefHeight="334.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SimulationViewController">
+   <Button layoutX="504.0" layoutY="48.0" mnemonicParsing="false" onAction="#simulation1" text="Slow simulation" />
    <ImageView fitHeight="346.0" fitWidth="632.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true">
-      <Image url="@imgs/wallpaper.jpg"/>
+      <Image url="@imgs/wallpaper.jpg" />
    </ImageView>
-   <ImageView fx:id="roofImage" fitHeight="53.0" fitWidth="52.0" layoutX="478.0" layoutY="231.0" pickOnBounds="true"
-              preserveRatio="true">
-      <Image url="@imgs/roof.png"/>
+   <ImageView fx:id="roofImage" fitHeight="53.0" fitWidth="52.0" layoutX="478.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@imgs/roof.png" />
    </ImageView>
-   <ImageView fx:id="absImage" fitHeight="52.0" fitWidth="65.0" layoutX="287.0" layoutY="157.0" pickOnBounds="true"
-              preserveRatio="true">
-      <Image url="@imgs/abs.png"/>
+   <ImageView fx:id="absImage" fitHeight="52.0" fitWidth="65.0" layoutX="287.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@imgs/abs.png" />
    </ImageView>
-   <ImageView fx:id="oilImage" fitHeight="52.0" fitWidth="52.0" layoutX="294.0" layoutY="231.0" pickOnBounds="true"
-              preserveRatio="true">
-      <Image url="@imgs/oil.png"/>
+   <ImageView fx:id="oilImage" fitHeight="52.0" fitWidth="52.0" layoutX="294.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@imgs/oil.png" />
    </ImageView>
-   <ImageView fx:id="espImage" fitHeight="52.0" fitWidth="67.0" layoutX="384.0" layoutY="231.0" pickOnBounds="true"
-              preserveRatio="true">
-      <Image url="@imgs/esp.png"/>
+   <ImageView fx:id="espImage" fitHeight="52.0" fitWidth="67.0" layoutX="384.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@imgs/esp.png" />
    </ImageView>
-   <ImageView fx:id="seatImage" fitHeight="52.0" fitWidth="60.0" layoutX="384.0" layoutY="156.0" pickOnBounds="true"
-              preserveRatio="true">
-      <Image url="@imgs/seat.png"/>
+   <ImageView fx:id="seatImage" fitHeight="52.0" fitWidth="60.0" layoutX="384.0" layoutY="156.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@imgs/seat.png" />
    </ImageView>
-   <ImageView fx:id="tcuImage" fitHeight="52.0" fitWidth="60.0" layoutX="479.0" layoutY="156.0" pickOnBounds="true"
-              preserveRatio="true">
-      <Image url="@imgs/tcu.png"/>
+   <ImageView fx:id="airbagImage" fitHeight="52.0" fitWidth="60.0" layoutX="479.0" layoutY="156.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@imgs/airbag.png" />
    </ImageView>
-   <ImageView fitHeight="61.0" fitWidth="78.0" layoutX="143.0" layoutY="253.0" onMousePressed="#simulation1"
-              pickOnBounds="true" preserveRatio="true">
-      <Image url="@imgs/start.png"/>
+   <ImageView fitHeight="61.0" fitWidth="78.0" layoutX="146.0" layoutY="253.0" onMouseClicked="#simulation1" pickOnBounds="true" preserveRatio="true">
+      <Image url="@imgs/start.png" />
+   </ImageView>
+   <ImageView fitHeight="52.0" fitWidth="77.0" layoutX="155.0" layoutY="27.0" onMouseClicked="#simulation2" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@imgs/sport.png" />
+      </image>
    </ImageView>
 </AnchorPane>

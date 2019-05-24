@@ -1,7 +1,7 @@
 package entities;
 
 import java.util.Date;
-public class TCU {
+public class Airbag {
     public Date execute() {
         return new Date();
     }
