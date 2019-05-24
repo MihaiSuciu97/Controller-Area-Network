@@ -1,48 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane prefHeight="334.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SimulationViewController">
    <children>
-      <Label layoutX="14.0" layoutY="23.0" text="SIMULATION VIEW" />
-      <Button layoutX="175.0" layoutY="19.0" mnemonicParsing="false" onAction="#startSimulationList" text="Start" />
-      <ImageView fx:id="roofImage" fitHeight="53.0" fitWidth="52.0" layoutX="316.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
+      <Button layoutX="504.0" layoutY="48.0" mnemonicParsing="false" onAction="#simulation1" text="Slow simulation" />
+      <ImageView fitHeight="346.0" fitWidth="632.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imgs/wallpaper.jpg" />
+         </image></ImageView>
+      <ImageView fx:id="roofImage" fitHeight="53.0" fitWidth="52.0" layoutX="478.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imgs/roof.png" />
          </image></ImageView>
-      <Label layoutX="326.0" layoutY="107.0" prefHeight="17.0" prefWidth="32.0" text="Roof" />
-      <ImageView fx:id="absImage" fitHeight="52.0" fitWidth="74.0" layoutX="31.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="absImage" fitHeight="52.0" fitWidth="65.0" layoutX="287.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imgs/abs.png" />
          </image>
       </ImageView>
-      <Label layoutX="54.0" layoutY="107.0" text="ABS*" />
-      <Label layoutX="251.0" layoutY="107.0" text="Oil" />
-      <ImageView fx:id="oilImage" fitHeight="52.0" fitWidth="52.0" layoutX="233.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="oilImage" fitHeight="52.0" fitWidth="52.0" layoutX="294.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imgs/oil.png" />
          </image>
       </ImageView>
-      <Label layoutX="155.0" layoutY="107.0" text="ESP*" />
-      <ImageView fx:id="espImage" fitHeight="52.0" fitWidth="67.0" layoutX="133.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="espImage" fitHeight="52.0" fitWidth="67.0" layoutX="384.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imgs/esp.png" />
          </image>
       </ImageView>
-      <Label layoutX="407.0" layoutY="107.0" text="Seatbelt" />
-      <ImageView fx:id="seatImage" fitHeight="52.0" fitWidth="60.0" layoutX="399.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="seatImage" fitHeight="52.0" fitWidth="60.0" layoutX="384.0" layoutY="156.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imgs/seat.png" />
          </image>
       </ImageView>
-      <Label layoutX="510.0" layoutY="107.0" text="Airbag" />
-      <ImageView fx:id="tcuImage" fitHeight="52.0" fitWidth="60.0" layoutX="498.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="tcuImage" fitHeight="52.0" fitWidth="60.0" layoutX="479.0" layoutY="156.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imgs/tcu.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="61.0" fitWidth="78.0" layoutX="143.0" layoutY="253.0" onMousePressed="#simulation1" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imgs/start.png" />
          </image>
       </ImageView>
    </children>

@@ -23,7 +23,7 @@ public class FirstViewController implements Initializable {
 
     public void startSimulation() {
         Scene scene = startSimulationButton.getScene();
-        Parent newFxml = null;
+        Parent newFxml;
         try {
             newFxml = FXMLLoader.load(getClass().getResource("/resources/SimulationView.fxml"));
             scene.setRoot(newFxml);

@@ -5,13 +5,11 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="334.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FirstViewController">
-   <children>
-      <ImageView fitHeight="334.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@imgs/car.jpg" />
-         </image>
-      </ImageView>
-      <Button fx:id="startSimulationButton" layoutX="232.0" layoutY="264.0" mnemonicParsing="false" onAction="#startSimulation" prefHeight="36.0" prefWidth="137.0" text="Start simulation" textFill="WHITE" />
-   </children>
+<AnchorPane prefHeight="334.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FirstViewController">
+   <ImageView fitHeight="376.0" fitWidth="640.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@imgs/car.jpg"/>
+   </ImageView>
+   <Button fx:id="startSimulationButton" layoutX="260.0" layoutY="282.0" mnemonicParsing="false"
+           onAction="#startSimulation" prefHeight="36.0" prefWidth="137.0" text="Start simulation" textFill="WHITE"/>
 </AnchorPane>
