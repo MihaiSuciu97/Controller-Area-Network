@@ -118,6 +118,30 @@ public class SimulationViewController implements Initializable {
             System.out.println("Abs repaired - " + date);
         });
         absPause.play();
+
+        PauseTransition airbagPause = new PauseTransition(Duration.seconds(9));
+        airbagPause.setCycleCount(1);
+        airbagPause.setOnFinished(event -> {
+            airbagImage.setVisible(false);
+            date = airbag.repair();
+            System.out.println("Airbag repaired - " + date);
+
+            oilImage.setVisible(true);
+            date=oil.execute();
+            System.out.println("Oil problem - "+date);
+        });
+        airbagPause.play();
+
+        PauseTransition oilPause = new PauseTransition(Duration.seconds((12)));
+        oilPause.setCycleCount(1);
+        oilPause.setOnFinished(event -> {
+            oilImage.setVisible(false);
+            date = oil.repair();
+            System.out.println("Oil repaired - " + date);
+        });
+        oilPause.play();
+
+
     }
 
 }
