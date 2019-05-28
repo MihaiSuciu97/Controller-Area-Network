@@ -127,12 +127,12 @@ public class SimulationViewController implements Initializable {
             System.out.println("Airbag repaired - " + date);
 
             oilImage.setVisible(true);
-            date=oil.execute();
-            System.out.println("Oil problem - "+date);
+            date = oil.execute();
+            System.out.println("Oil problem - " + date);
         });
         airbagPause.play();
 
-        PauseTransition oilPause = new PauseTransition(Duration.seconds((12)));
+        PauseTransition oilPause = new PauseTransition(Duration.seconds(12));
         oilPause.setCycleCount(1);
         oilPause.setOnFinished(event -> {
             oilImage.setVisible(false);
@@ -141,7 +141,50 @@ public class SimulationViewController implements Initializable {
         });
         oilPause.play();
 
+        PauseTransition seatRoofPause = new PauseTransition(Duration.seconds(12));
+        seatRoofPause.setCycleCount(1);
+        seatRoofPause.setOnFinished(event -> {
+            roofImage.setVisible(true);
+            date = roof.execute();
+            System.out.println("Roof problem - " + date);
 
+            espImage.setVisible(true);
+            date = esp.execute();
+            System.out.println("ESP problem - " + date);
+
+
+            seatImage.setVisible(true);
+            date = seat.execute();
+            System.out.println("Seat problem - " + date);
+        });
+        seatRoofPause.play();
+
+        PauseTransition espSecondPause = new PauseTransition(Duration.seconds(15));
+        espSecondPause.setCycleCount(1);
+        espSecondPause.setOnFinished(event -> {
+            espImage.setVisible(false);
+            date = esp.repair();
+            System.out.println("ESP solved - " + date);
+        });
+        espSecondPause.play();
+
+        PauseTransition roofPause = new PauseTransition(Duration.seconds(18));
+        roofPause.setCycleCount(1);
+        roofPause.setOnFinished(event -> {
+            roofImage.setVisible(false);
+            date = roof.repair();
+            System.out.println("Roof solved - " + date);
+        });
+        roofPause.play();
+
+        PauseTransition seatPause = new PauseTransition(Duration.seconds(21));
+        seatPause.setCycleCount(1);
+        seatPause.setOnFinished(event -> {
+            seatImage.setVisible(false);
+            date = seat.repair();
+            System.out.println("Seat solved - " + date);
+        });
+        seatPause.play();
     }
 
 }
