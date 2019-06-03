@@ -3,6 +3,8 @@ package entities;
 import java.util.Date;
 
 public class Seat{
+    private boolean isImportant;
+
     public Date execute() {
         return new Date();
     }
@@ -10,5 +12,13 @@ public class Seat{
     public Date repair() {
 
         return new Date();
+    }
+
+    public boolean isImportant() {
+        return isImportant;
+    }
+
+    public void setImportant(boolean important) {
+        isImportant = important;
     }
 }

@@ -31,4 +31,14 @@ public class FirstViewController implements Initializable {
             e.printStackTrace();
         }
     }
+    public boolean testing(Object a,Object b){
+        boolean isImportant;
+        if(a.equals(b)){
+            isImportant=true;
+        }
+        else{
+            isImportant=false;
+        }
+        return isImportant;
+    }
 }
